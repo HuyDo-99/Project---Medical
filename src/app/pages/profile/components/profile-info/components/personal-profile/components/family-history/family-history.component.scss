@@ -1,0 +1,58 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+.container-fluid {
+    padding-left: 4vw;
+    padding-right: 1vw;
+    padding-top: 1vh;
+    height: 67vh;
+    // margin-top: 20px;
+ 
+}
+.icon-div {
+    right: 3vw;
+    position: absolute;
+    bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        margin: 0 10px;
+    }
+}
+button {
+    padding: 0;
+  }
+input{
+    border: none; 
+    background: none;
+    text-align: center;
+}
+.table-btn {
+    width: 184px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 24px ;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  5px 5px 10px #cccccc, 
+    -5px -5px 10px #ffffff;
+    margin-top: 20px;
+    float: right;
+}
+.btn-edit{
+    height: 100%;
+ 
+    width: 100%;
+}
+.save{
+    width: 80px;
+    height: 35px;
+    background-color: #9FB9C8;
+    border-radius: 18px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+ }

@@ -1,0 +1,84 @@
+<div class="demographics mt-4">
+  <div class="avatar">
+    <img
+      src="../../../../../../../../../assets/images/avatar_profile.png"
+      alt=""
+      width="200px"
+      height="300px"
+    />
+  </div>
+  <div class="info">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label> Firstname </label>
+          <input name="Firstname"  [(ngModel)]="firstName"/>
+        </div>
+        <div class="form-group">
+          <label> Lastname </label>
+          <input name="name" [(ngModel)]="lastName"/>
+        </div>
+        <div class="form-group">
+          <label> Phone </label>
+          <input name="phone" [(ngModel)]="phone"/>
+        </div>
+        <div class="form-group">
+          <label> Email </label>
+          <input name="email" [(ngModel)]="email"/>
+        </div>
+        <div class="form-group">
+          <label> Address </label>
+         <textarea name="" id="" [(ngModel)]="address"></textarea>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label> Gender </label>
+          <input name="gender" [(ngModel)]="gender"/>
+        </div>
+        <div class="form-group">
+          <label> Date of birth </label>
+          <input type="date" name="dob" [(ngModel)]="dob"/>
+        </div>
+        <div class="form-group">
+          <label> National ID </label>
+          <input name="national" [(ngModel)]="nationalId"/>
+        </div>
+      </div>
+    </div>
+    <hr style="width: 100%;">
+    <h4>Emergency contact</h4>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label> Firstname </label>
+          <input name="name" />
+        </div>
+        <div class="form-group">
+          <label> Lastname </label>
+          <input name="name" />
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label> Relationship </label>
+          <input name="relationship"  />
+        </div>
+        <div class="form-group">
+          <label> Phone </label>
+          <input name="phone"  [(ngModel)]="emergencyPhone"/>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-end button-group">
+      <button class="btn"(click)= "updateCurrentPatient ()">
+        <img src="assets/svg/pen.svg" alt="">
+    </button>
+    <button class="btn">
+        <img src="assets/svg/print.svg" alt="">
+    </button>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,95 @@
+<div class="container-fluid" style="height: 74vh;">
+    <div class="row justify-content-center align-items-center text-center"
+        style="height: 80px; border-bottom: 1px solid #707070; margin: 0 20px 0 20px;">
+        <div class="col-3">
+            <h3>
+                Not yet reviewed test:
+            </h3>
+        </div>
+        <div class="col-3"
+            style="margin-right: 20px; width: 100%; height: 35px; background-color: #ffffff; border-radius: 24px;">
+            <p style="font-weight: bold; color: #D40000; line-height: 35px;">
+                Coronary angiogram
+            </p>
+        </div>
+        <div class="col-1"
+            style="margin-right: 20px; width: 100%; height: 35px; background-color: #ffffff; border-radius: 24px;">
+            <p style="font-weight: bold; color: #D40000; line-height: 35px;">
+                Holter
+            </p>
+        </div>
+        <div class="col-2" style="width: 100%; height: 35px; background-color: #ffffff; border-radius: 24px;">
+            <p style="font-weight: bold; color: #D40000; line-height: 35px;">Stress test</p>
+        </div>
+    </div>
+    <div class="row justify-content-between" style="margin: 10px 25px;">
+        <div style="width: 45%;">
+            <h3>Last visit:</h3>
+            <div style="background-color: #ffffff; border-radius: 18px;">
+                <table mat-table [dataSource]="dataSource" matSort
+                    class="mat-elevation-z8 table-hover text-center content tableDiagnosis mt-3">
+                    <ng-container matColumnDef="15/03/2020">
+                        <th mat-header-cell *matHeaderCellDef>
+                            15/03/2020
+                        </th>
+                        <td mat-cell *matCellDef="let packages">
+                            {{packages.Name}}
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+
+                <table mat-table [dataSource]="dataSource" matSort
+                    class="mat-elevation-z8 table-hover text-center content tableDiagnosis">
+                    <ng-container matColumnDef="Possible other diagnosis">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Possible other diagnosis
+                        </th>
+                        <td mat-cell *matCellDef="let packages">
+                            {{packages.Name}}
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns1; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                </table>
+            </div>
+
+        </div>
+        <div style="width: 45%;">
+            <h3>This visit:</h3>
+            <div style="background-color: #ffffff; border-radius: 18px;">
+                <table mat-table [dataSource]="dataSource" matSort
+                    class="mat-elevation-z8 table-hover text-center content tableDiagnosis mt-3">
+                    <ng-container matColumnDef="15/03/2020">
+                        <th mat-header-cell *matHeaderCellDef>
+                            15/03/2020
+                        </th>
+                        <td mat-cell *matCellDef="let packages">
+                            {{packages.Name}}
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+
+                <table mat-table [dataSource]="dataSource" matSort
+                    class="mat-elevation-z8 table-hover text-center content tableDiagnosis">
+                    <ng-container matColumnDef="Possible other diagnosis">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Possible other diagnosis
+                        </th>
+                        <td mat-cell *matCellDef="let packages">
+                            {{packages.Name}}
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns1; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="print">
+        <mat-icon>print</mat-icon>
+     </div>
+</div>

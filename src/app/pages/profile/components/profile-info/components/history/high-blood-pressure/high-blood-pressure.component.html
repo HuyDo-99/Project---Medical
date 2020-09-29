@@ -1,0 +1,163 @@
+<div class="container" style="height: 71vh;">
+    <div class="row mt-4">
+        <div class="col-2">Overall</div>
+        <div class="col-4"></div>
+        <div class="col-6" >
+            <ngb-rating class="rating-1" [(rate)]="currentRate0" [max]="6">
+                <ng-template let-fill="fill" let-index="index">
+                    <span class="rectangle" [class.filled]="fill === 100" 
+                                       [class.bad]="index < 1"
+                                       [class.worse]="index ===1"
+                                       [class.same]="index===2"
+                                       [class.moresame]="index===3"
+                                       [class.better]="index===4"
+                                       [class.gone]="index===5">&#9644;</span>
+                </ng-template>
+              </ngb-rating>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-2">Old symptons</div>
+        <div class="col-4">
+            <div class="old-symptons">
+                <p>Shortness of breath</p>
+            </div>
+           <div class="old-symptons">
+                <p>Decrease in exercise tolerance</p>
+           </div>
+           <div class="old-symptons">
+                <p>Decrease in exercise tolerance</p>
+           </div>
+           <div class="old-symptons">
+               <p>Decrease in exercise tolerance</p>
+           </div>
+        </div>
+        <div class="col-6" style="margin-top: -10px;">
+            
+            <ngb-rating class="rating-1" [(rate)]="currentRate1" [max]="6" style="padding: 0;margin-top: 10px;">
+                <ng-template let-fill="fill" let-index="index">
+                    <span class="rectangle" [class.filled]="fill === 100" 
+                                       [class.bad]="index < 1"
+                                       [class.worse]="index ===1"
+                                       [class.same]="index===2"
+                                       [class.moresame]="index===3"
+                                       [class.better]="index===4"
+                                       [class.gone]="index===5">&#9644;</span>
+                </ng-template>
+              </ngb-rating>
+              <ngb-rating class="rating-1" [(rate)]="currentRate2" [max]="6" style="padding: 0;margin-top: 10px;">
+                <ng-template let-fill="fill" let-index="index">
+                    <span class="rectangle" [class.filled]="fill === 100" 
+                                       [class.bad]="index < 1"
+                                       [class.worse]="index ===1"
+                                       [class.same]="index===2"
+                                       [class.moresame]="index===3"
+                                       [class.better]="index===4"
+                                       [class.gone]="index===5">&#9644;</span>
+                </ng-template>
+              </ngb-rating>
+              <ngb-rating class="rating-1" [(rate)]="currentRate3" [max]="6" style="padding: 0; margin-top: 10px;">
+                <ng-template let-fill="fill" let-index="index">
+                    <span class="rectangle" [class.filled]="fill === 100" 
+                                       [class.bad]="index < 1"
+                                       [class.worse]="index ===1"
+                                       [class.same]="index===2"
+                                       [class.moresame]="index===3"
+                                       [class.better]="index===4"
+                                       [class.gone]="index===5">&#9644;</span>
+                </ng-template>
+              </ngb-rating>
+              <ngb-rating class="rating-1" [(rate)]="currentRate4" [max]="6" style="padding: 0; margin-top: 10px;">
+                <ng-template let-fill="fill" let-index="index">
+                    <span class="rectangle" [class.filled]="fill === 100" 
+                                       [class.bad]="index < 1"
+                                       [class.worse]="index ===1"
+                                       [class.same]="index===2"
+                                       [class.moresame]="index===3"
+                                       [class.better]="index===4"
+                                       [class.gone]="index===5">&#9644;</span>
+                </ng-template>
+              </ngb-rating>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-2">New symptons</div>
+        <div class="col-4">
+            <p>Wheezing or a whistling breathing</p>
+            <p>Runny rose</p>
+            <p>Heartburn</p>
+        </div>
+        <div class="col-6"></div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-2">Review of systems</div>
+        <div class="col-4">
+            <p>New value 1</p>
+            <p>New value 1</p>
+            <p>New value 1</p>
+        </div>
+        <div class="col-6"></div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-2" style="margin: 9px 0px;">Daily life</div>
+        <div class="col-4" style="margin: 9px 0px;">
+            <p>New value 1</p>
+            <p>New value 1</p>
+            <p>New value 1</p>
+        </div>
+        <div class="col-1,5" style="display: flex; flex-direction: column;">
+            <button>No</button>
+            <button>No</button>
+            <button>No</button>
+        </div>
+        <div class="col-1,5" style="display: flex; flex-direction: column;">
+            <button>Yes</button>
+            <button>Yes</button>
+            <button>Yes</button>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-2">Medication</div>
+        <div class="col-4">
+            <p>Your current Medication</p>
+            <p>New value 1</p>
+            <p>New value 1</p>
+            <p>New value 1</p>
+        </div>
+        <div class="col-3" style="margin: 0px -18px;"> <p style="margin: 0px 50px;">Take it?</p>
+            <div class="abc" style="display: flex; flex-direction: row;">
+            <div class="col-1,5" style="display: flex; flex-direction: column;">
+                <button>No</button>
+                <button>No</button>
+                <button>No</button>
+            </div>
+            <div class="col-1,5" style="display: flex; flex-direction: column;">
+                <button>Yes</button>
+                <button>Yes</button>
+                <button>Yes</button>
+            </div>
+            </div>
+        </div>
+        <div class="col-3"><p style="margin: 0px 45px;">Tolerated?</p>
+            <div class="abc" style="display: flex; flex-direction: row;">
+                <div class="col-1,5" style="display: flex; flex-direction: column;">
+                    <button>No</button>
+                    <button>No</button>
+                    <button>No</button>
+                </div>
+                <div class="col-1,5" style="display: flex; flex-direction: column;">
+                    <button>Yes</button>
+                    <button>Yes</button>
+                    <button>Yes</button>
+                </div>
+                </div>
+        </div>
+    </div>
+</div>
+

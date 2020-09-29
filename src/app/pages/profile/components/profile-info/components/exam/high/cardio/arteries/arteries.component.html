@@ -1,0 +1,52 @@
+<div class="container-fluid row">
+    <div class="arteries-first col-3" style="padding-right: 0px;">
+        <div class="arteries-content" (click)="showContent1()" [style.background]="choose ? '#DFE7EC' : ''">A carotis</div>
+        <div class="arteries-content" (click)="showContent()" [style.background]="!choose ? '#DFE7EC' : ''">Aorta</div>
+        <div class="arteries-content">A femoralis</div>
+        <div class="arteries-content">A poplitea</div>
+        <div class="arteries-content">A tibialis posterior</div>
+        <div class="arteries-content">Capilary refill</div>
+    </div>
+    <div class="content row col-9" *ngIf="choose">
+        <div class="arteries-second col-3" style="padding-right: 0px;">
+            <div class="arteries-content">Palpation</div>
+            <div class="arteries-content" style="background-color: #DFE7EC">Murmer</div>
+        </div>
+        <div class="second col-3" style="padding-right: 0px;">
+            <div class="button">
+                <button mat-raised-button>No</button>
+                <button mat-raised-button style="box-shadow:inset 3px 2px 5px 1px #bdb2bd;">Yes</button>
+            </div>
+            <div class="button">
+                <button mat-raised-button style="box-shadow:inset 3px 2px 5px 1px #bdb2bd;">No</button>
+                <button mat-raised-button>Yes</button>
+            </div>
+        </div>
+        <div class="content-second arteries-fourth col-3" style="padding-right: 0px;">
+            <div class="arteries-content">Right</div>
+            <div class="arteries-content" style="background-color: #DFE7EC">Left</div>
+        </div>
+        <div class="content-second col-3" style="padding: 0px;"></div>
+    </div>
+
+    <div class="content row col-9" *ngIf="!choose">
+        <div class="arteries-second col-3" style="padding-right: 0px;">
+            <div class="arteries-content" style="background-color: #DFE7EC;">Aneurysme palpable</div>
+            <div class="arteries-content">Murmer</div>
+        </div>
+        <div class="second col-3" style="padding-right: 0px;">
+            <div class="button">
+                <button mat-raised-button  style="box-shadow:inset 3px 2px 5px 1px #bdb2bd;">No</button>
+                <button mat-raised-button>Yes</button>
+            </div>
+            <div class="button">
+                <button mat-raised-button style="box-shadow:inset 3px 2px 5px 1px #bdb2bd;">No</button>
+                <button mat-raised-button>Yes</button>
+            </div>
+        </div>
+        <div class="content-second arteries-fourth col-3" style="padding-right: 0px;">
+            <div class="arteries-content">Right</div>
+        </div>
+        <div class="content-second col-3" style="padding: 0px;"></div>
+    </div>
+</div>

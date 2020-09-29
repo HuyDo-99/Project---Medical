@@ -1,0 +1,91 @@
+<div class="table-btn">
+    <span class="material-icons">
+        keyboard_arrow_left
+        </span>
+        <p>Table</p>
+    <span class="material-icons">
+        keyboard_arrow_right
+        </span>
+</div>
+
+<div class="container-fluid row justify-content-between">
+    <form novalidate #myForm="ngForm" class="table-body">
+      <div class="kendoTableStyle">
+        <kendo-grid class="table-hover" [data]="dataSource" (edit)="editHandler($event)"
+          (add)="addHandlerMedical($event, myForm)" (remove)="removeHandler($event)" (save)="saveHandler($event)"
+          (cancel)="cancelHandler($event)">
+          <ng-template kendoGridToolbarTemplate>
+            <button kendoGridAddCommand class="btn" id="add-family" hidden>
+              <mat-icon>add_circle_outline</mat-icon>
+            </button>
+          </ng-template>
+  
+          <kendo-grid-column field="Relationship" title="Relationship">
+            <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+              <span [hidden]="isShow"><p>{{dataItem.Relationship}}</p></span>
+              <button class="btn btn-edit" [hidden]="!isShow" kendoGridEditCommand>{{dataItem.Relationship}}</button> 
+            </ng-template>
+            <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+              <input type="text" [(ngModel)]="dataItem.Relationship" name="Relationship" required />
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-column field="SNOMEDCode" title="Name">
+            <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+              <span [hidden]="isShow"><p>{{dataItem.SNOMEDCode}}</p></span>
+              <button class="btn btn-edit" [hidden]="!isShow" kendoGridEditCommand>{{dataItem.SNOMEDCode}}</button> 
+            </ng-template>
+            <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+              <input type="text" [(ngModel)]="dataItem.SNOMEDCode" name="SNOMEDCode" required />
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-column field="StartDate" title="Since">
+            <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+              <span [hidden]="isShow"><p>{{dataItem.StartDate | date : 'dd/MM/yyyy'}}</p></span>
+              <button class="btn btn-edit" [hidden]="!isShow" kendoGridEditCommand>{{dataItem.StartDate | date : 'dd/MM/yyyy'}}</button> 
+            </ng-template>
+            <ng-template kendoGridEditTemplate let-dataItem="dataItem" >
+              <input  type="date" [(ngModel)]="dataItem.StartDate" name="StartDate" required />
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-command-column title="" [hidden]="!isShow" width= "100">
+            <ng-template kendoGridCellTemplate let-isNew="isNew" >
+              <!-- edit the command directive, will be visible when not in edit mode -->
+              <button kendoGridEditCommand class="btn" id="editRow" [hidden]="!isShowEditButton">
+                <mat-icon>done</mat-icon>
+              </button> 
+              <!-- remove the command directive, will be visible when not in edit mode -->
+              <button kendoGridRemoveCommand class="btn">
+                <mat-icon>delete</mat-icon>
+              </button>
+              <!-- save the command directive, will be visible when in edit mode -->
+              <button kendoGridSaveCommand class="btn">
+                <mat-icon>{{ isNew ? 'create' : 'done' }}</mat-icon>
+              </button>
+              <!-- cancel the command directive, will be visible when in edit mode -->
+              <button kendoGridCancelCommand class="btn" id="cancel">
+                <mat-icon>{{ isNew ? 'cancel' : 'cancel' }}</mat-icon>
+              </button>
+            </ng-template>
+          </kendo-grid-command-column>
+          <button class="btn btn-primary material-icons" kendoGridAddCommand>
+            add_circle_outline
+          </button>
+        </kendo-grid>
+      </div>
+      
+    </form>
+    <div class="icon-div">
+      <button mat-button (click)="createFamily()">
+        <span class="material-icons"  *ngIf="change">
+          add_circle_outline
+        </span> 
+      </button>
+      <span style="color: #9FB9C8; font-size: 16px; width: 100px;" *ngIf="!change" (click)="closeEditTable()" >Cancel</span>
+      <span class="material-icons" (click)="editDataTable()" *ngIf="change">
+        edit
+      </span>
+      <button class="btn save" *ngIf="!change" (click)="closeEditTable()">
+        Save
+      </button>
+    </div>
+  </div>

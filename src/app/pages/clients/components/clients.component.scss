@@ -1,0 +1,62 @@
+p{
+    margin: 0;
+    font-size: 9px;
+
+}
+b{
+  font-size: 10px;
+}
+h3 {
+    margin: 0px 10px 10px;
+    padding-top: 5px;
+    display: inline-block;
+    color: #808080;
+  }
+  h3:nth-child(2) {
+    float: right;
+  }
+  h3:nth-child(2):hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .box-info{
+     
+    height: 90px; 
+    // border: 1px solid; 
+    border-radius: 20px;
+    // margin: -10px 0 10px 40px;
+  }
+  .avatar{
+    width: 75px;
+    height: 90px;
+    border-radius: 15px;
+    left: -15px;
+    position: relative;
+  }
+  
+.content{ 
+    height: auto;
+    position: absolute;
+    top: 0px;
+    left: 85px;
+   
+}
+.chat{
+    cursor: pointer;
+    width: 20px; 
+    height: 20px;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+.add-button{
+    border: none;
+    background-color: #f6f6f6;
+    position: relative;
+    top: 10px;
+    float: right;
+    img{
+      width: 30px;
+      height: 30px;
+    }
+}

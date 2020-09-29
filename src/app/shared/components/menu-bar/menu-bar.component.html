@@ -1,0 +1,57 @@
+<div id="mySidenav" class="sidenav insideShadow" [style.text-align]="nav == 0 ? 'center': 'left'" [hidden]="isShow">
+  <div class="avatar mx-auto text-center" [style.box-shadow]="nav == 0 ? 'none': '4px 3px 10px 0px #4c4c4c'"
+    [style.width]="nav == 0 ? '100px': '140px'" style="    margin-top: -10px;">
+    <img src="/assets/svg/logo.svg" alt="">
+    <b class="mt-2" *ngIf="nav !== 0">Hibiscus Clinic</b>
+  </div>
+  <span><a (click)="nav == 0? openNav() : closeNav()" class="text-center"
+      style="font-size: xx-large; margin-right: 3px;"> ⇆ </a></span>
+  <a *ngFor="let item of menuItem" name="{{item.title}}" [routerLink]="item.link" routerLinkActive="sideBarActive">
+    <img class="img-svg" src="{{item.img}}">
+    <mat-icon>{{item.icon}}</mat-icon><span *ngIf="nav !== 0">{{item.title}}</span>
+  </a>
+
+</div>
+<!-- <div class="outsideShadow mx-auto" style="width: 30px; height: 30px; margin: 10px;" [hidden]="isShow">
+  <mat-icon style="font-size: 30px; color: #4C7288;" (click)="showMenu()">keyboard_arrow_up</mat-icon>
+</div> -->
+<div [hidden]="!isShow" class="text-center" style="width: 100px; height: 100px; background-color: #9FB9C8; margin-left: 13px; border-bottom-right-radius: 24px;
+  border-bottom-left-radius: 24px;">
+  <img src="/assets/svg/logo.svg" style="margin-top: 27px;" width="57" height="57" alt="">
+</div>
+<div class="outsideShadow mx-auto" style="width: 30px; height: 30px; margin: 10px;" [hidden]="!isShow">
+  <mat-icon style="font-size: 30px; color: #4C7288;" (click)="showMenu()">keyboard_arrow_down</mat-icon>
+</div>
+<div id="tabs-vertical" class="tab-item insideShadow" [hidden]="!isShow">
+  <div class="avatar mx-auto text-center" style="margin-top: -10px;">
+
+  </div>
+  <!-- <a *ngFor="let item of tabItem" name="{{item.title}}" [routerLink]="item.link" routerLinkActive="sideBarActive">
+    <mat-icon>{{item.icon}}</mat-icon><span>{{item.title}}</span>
+    <img src="{{item.img}}" alt="">
+  </a> -->
+  <a name="History" routerLink="/pages/profile/detail/{{patientId}}/history" routerLinkActive="sideBarActive">
+  <img  src="assets/svg/history.png" alt="">
+    <p>History</p>
+  </a>
+  <a name="Exam" routerLink="/pages/profile/detail/{{patientId}}/exam" routerLinkActive="sideBarActive">
+    <img src="assets/svg/exam.svg" alt="">
+    <p>Exam</p>
+  </a>
+  <a name="Diagnosis" routerLink="/pages/profile/detail/{{patientId}}/diagnosis" routerLinkActive="sideBarActive">
+    <img src="assets/svg/Diagnosis.svg" alt="">
+    <p>Diagnosis</p>
+  </a>
+  <a name="Plan" routerLink="/pages/profile/detail/{{patientId}}/plan" routerLinkActive="sideBarActive">
+    <img src="assets/svg/plan.svg" alt="">
+    <p>Plan</p>
+  </a>
+  <a name="Report" routerLink="/pages/profile/detail/{{patientId}}/report" routerLinkActive="sideBarActive">
+    <img src="assets/svg/report.svg" alt="">
+    <p>Report</p>
+  </a>
+  <a name="Invoice" routerLink="/pages/profile/detail/{{patientId}}/invoice" routerLinkActive="sideBarActive">
+    <img src="assets/svg/invoice.svg" alt="">
+    <p>Invoice</p>
+  </a>
+</div>

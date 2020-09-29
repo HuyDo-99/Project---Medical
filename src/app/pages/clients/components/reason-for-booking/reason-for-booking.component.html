@@ -1,0 +1,139 @@
+<div class="container-fluid">
+    <div class="row" style="position: sticky;">
+        <div class="col-6">
+            <h3 style="line-height: 55px; font-size: 20px; color: #808080;">Reason for booking</h3>
+        </div>
+        <div class="col-6">
+            <app-user></app-user>
+        </div>
+    </div>
+    <div class="problem__list mt-4">
+      <div class="problem__list__header">
+        <div class="personal__info outsideShadow ml-1">
+          <img [src]="mediaURL" alt="" height="100%" />
+          <div class="info__content">
+            <div>
+              <h5>Name :</h5>
+              <span [(ngModel)]="lastName"></span>
+            </div>
+            <div>
+              <h5>Age :</h5>
+              <h4 >18</h4>
+            </div>
+            <div>
+              <h5>Phone :</h5>
+              <h4 [(ngModel)]="phone">0987458963</h4>
+            </div>
+            <div>
+              <h5>Email :</h5>
+              <h4 [(ngModel)]="email">thutran@gmail.com</h4>
+            </div>
+            <div>
+              <h5>Address :</h5>
+              <h4 [(ngModel)]="address">Truong Dinh , hoang mai, ha noi</h4>
+            </div>
+          </div>
+        </div>
+        <div class="personal__note insideShadow mr-1">
+          <h3>Note</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, mollitia?
+          </p>
+        </div>
+      </div>
+      <div class="problem__list__body insideShadow ml-1 mr-1 ">
+        <div class="old__problem">
+          <h3 style="color: #707070;">Old problem</h3>
+          <div class="problem__group mt-3">
+            <div class="title-problem">
+               <h4>Diabetes</h4>
+            </div>
+           
+            <div class="button__group">
+              <!-- <button
+                [className]="btnStyle ? '' : 'btn__style__active'"
+                (click)="changeStyle()"
+              > -->
+              <input type="checkbox" id="diabetes-1">
+              <label class="" for="diabetes-1"><p>Solved</p></label>
+              <input type="checkbox" id="diabetes-2">
+              <label class="" for="diabetes-2" ><p>Follow up</p></label>
+              <input type="checkbox" id="diabetes-3" checked>
+              <label  class="" for="diabetes-3">Skip</label>
+            </div>
+          </div>
+          <div class="problem__group">
+            <div class="title-problem">
+              <h4>Measles</h4>
+            </div>
+            
+            <div class="button__group">
+              <input type="checkbox" id="measles-1">
+              <label class="" for="measles-1"><p>Solved</p></label>
+              <input type="checkbox" id="measles-2">
+              <label class="" for="measles-2" ><p>Follow up</p></label>
+              <input type="checkbox" id="measles-3" checked>
+              <label  class="" for="measles-3">Skip</label>
+            </div>
+          </div>
+          <div class="problem__group">
+            <div class="title-problem">
+               <h4>Cough</h4>
+            </div>
+           
+            <div class="button__group">
+              <input type="checkbox" id="cough-1">
+              <label class="" for="cough-1"><p>Solved</p></label>
+              <input type="checkbox" id="cough-2">
+              <label class="" for="cough-2" ><p>Follow up</p></label>
+              <input type="checkbox" id="cough-3" checked>
+              <label  class="" for="cough-3">Skip</label>
+            </div>
+          </div>
+          <div class="problem__group">
+            <div class="title-problem">
+              <h4>Pneumonia</h4>
+            </div>
+            
+            <div class="button__group">
+              <input type="checkbox" id="pneumonia-1">
+              <label class="" for="pneumonia-1"><p>Solved</p></label>
+              <input type="checkbox" id="pneumonia-2">
+              <label class="" for="pneumonia-2" ><p>Follow up</p></label>
+              <input type="checkbox" id="pneumonia-3" checked>
+              <label  class="" for="pneumonia-3">Skip</label>
+            </div>
+          </div>
+          <div class="problem__group">
+            <div class="title-problem">
+              <h4>Stomatchache</h4>
+            </div>      
+            <div class="button__group">
+              <input type="checkbox" id="stomatchache-1">
+              <label class="" for="stomatchache-1"><p>Solved</p></label>
+              <input type="checkbox" id="stomatchache-2">
+              <label class="" for="stomatchache-2" ><p>Follow up</p></label>
+              <input type="checkbox" id="stomatchache-3" checked>
+              <label  class="" for="stomatchache-3">Skip</label>
+            </div>
+          </div>
+        </div>
+        <div style="border-right: thin solid; height: 26em; width: 1px;"></div>
+        <div class="new__problem">
+          <h3 style="color: #707070;">New problem</h3>
+          <div class="content">
+            <h3>Diabetes</h3>
+          </div>
+          <button class="btn add-button">
+            <img src="assets/svg/create.svg" alt="">
+        </button>
+        </div>
+      </div>
+      <div class="btn__start">
+        <button class="insideShadow" routerLink="schedule">Select date</button>
+      </div>
+     
+    </div>
+    
+
+</div>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="Group_1155" data-name="Group 1155" transform="translate(-55.866 -494.866)">
+    <g id="_chat" data-name=" chat" transform="translate(55.866 494.866)">
+      <rect id="Rectangle_129" data-name="Rectangle 129" width="16.306" height="16.306" transform="translate(0)" fill="none"/>
+      <path id="Icon_material-message" data-name="Icon material-message" d="M20.725,3H4.969A1.967,1.967,0,0,0,3.01,4.969L3,22.694l3.939-3.939H20.725a1.975,1.975,0,0,0,1.969-1.969V4.969A1.975,1.975,0,0,0,20.725,3ZM18.755,14.816H6.939V12.847H18.755Zm0-2.954H6.939V9.893H18.755Zm0-2.954H6.939V6.939H18.755Z" transform="translate(-2.694 -2.694)" fill="#707070"/>
+    </g>
+  </g>
+</svg>

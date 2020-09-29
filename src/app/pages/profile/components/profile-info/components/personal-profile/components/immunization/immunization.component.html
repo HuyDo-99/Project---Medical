@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <form novalidate #myForm="ngForm">
+    <div class="kendoTableStyle">
+      <kendo-grid class="table-hover table-borderless " [data]="PatientImmunizationschedules" (edit)="editHandler($event)"   (add)="addHandler($event, myForm)"
+      (remove)="removeHandler($event)"  (save)="saveHandler($event)"  (cancel)="cancelHandler($event)">
+      <ng-template kendoGridToolbarTemplate>
+        <button kendoGridAddCommand class="btn" id="add-button" hidden><mat-icon>add_circle_outline</mat-icon></button>
+      </ng-template>
+      <kendo-grid-column field="Vaccine" title="Vaccines">
+        <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+          <span [hidden]="isShow"><p>{{dataItem.Vaccine}}</p></span>
+          <button class="btn edit" (click)="editButton()" kendoGridEditCommand [hidden]="!isShow">{{dataItem.Vaccine}}</button>
+        </ng-template>
+        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+          <input type="text" [(ngModel)]="dataItem.Vaccine" name="Vaccine" required />
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column field="Type" title="Type">
+        <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+          <span [hidden]="isShow"><p>{{dataItem.Type}}</p></span>
+          <button class="btn edit" (click)="editButton()" kendoGridEditCommand [hidden]="!isShow">{{dataItem.Type}}</button>
+        </ng-template>
+        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+          <input type="text" [(ngModel)]="dataItem.Type" name="Type" required />
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column field="AppliedDate" title="Date">
+        <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+          <span [hidden]="isShow"><p>{{dataItem.AppliedDate}}</p></span>
+          <button class="btn edit" (click)="editButton()" kendoGridEditCommand [hidden]="!isShow">{{dataItem.AppliedDate}}</button>
+        </ng-template>
+        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+          <input type="text" [(ngModel)]="dataItem.AppliedDate" name="AppliedDate" required />
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-command-column title="" width="100" [hidden] = "!isShow">
+        <ng-template kendoGridCellTemplate let-isNew="isNew">
+          <!-- edit the command directive, will be visible when not in edit mode -->
+          <button kendoGridEditCommand class="btn" [hidden]="!showButton"><mat-icon>done</mat-icon></button>
+          <!-- remove the command directive, will be visible when not in edit mode -->
+          <button kendoGridRemoveCommand class="btn"><mat-icon>delete</mat-icon></button>
+          <!-- save the command directive, will be visible when in edit mode -->
+          <button kendoGridSaveCommand class="btn"><mat-icon>{{ isNew ? 'create' : 'done' }}</mat-icon></button>
+          <!-- cancel the command directive, will be visible when in edit mode -->
+          <button kendoGridCancelCommand class="btn" id="cancel"><mat-icon>{{ isNew ? 'cancel' : 'cancel' }}</mat-icon></button>
+        </ng-template>
+      </kendo-grid-command-column>
+    </kendo-grid>
+    </div>
+  </form>   
+  <div class="button-group" [hidden]="isShow">
+    <button class="btn pr-3 pl-3" (click)="clickAdd()"><mat-icon>add_circle_outline</mat-icon></button>
+    <button class="btn" (click)="showEdit()"><mat-icon>edit</mat-icon></button>
+  </div>
+  <div class="button-group" [hidden]="!isShow">
+    <button class="btn" (click)="closeEditTable()" style="color: #9FB9C8; font-size: 16px; width: 100px;">Cancel</button>
+    <button class="btn save" (click)="closeEditTable()">Save</button>
+  </div>
+
+</div>
+

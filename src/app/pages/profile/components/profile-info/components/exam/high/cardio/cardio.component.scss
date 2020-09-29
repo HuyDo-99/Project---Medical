@@ -1,0 +1,12 @@
+.container-fluid{
+    height: 58vh;
+    .tab{
+        height: 58vh;
+        ::ng-deep .mat-tab-labels{
+            background-color: #F6F6F6;
+        }
+        
+        
+    }
+
+}

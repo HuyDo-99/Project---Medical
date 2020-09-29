@@ -1,0 +1,44 @@
+.container-fluid {
+    padding: 20px;
+    height: 75vh;
+  }
+// .table-body{
+//     display: flex;
+//     th{
+//         padding: 0px !important;
+//         border-bottom: none !important; 
+//     }
+//     .kendoTableStyle{
+//         padding-left: 2vw;
+        
+//         kendo-grid-column{
+//             display: flex;
+//             justify-content: space-between;
+//         }
+//         ::ng-deep .k-grid td:last-child{
+//             display: flex;
+//         }
+//     }
+// }
+
+.icon-div {
+    right: 1em;
+    position: absolute;
+    top: 33rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        margin: 0 10px;
+    }
+}
+// input{
+//     border: none; 
+//     background: none;
+//     height: 35px;
+//     text-align: center;
+// }
+
+table {
+    width: 48%;
+}

@@ -1,0 +1,318 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h3 style="line-height: 55px; font-size: 20px;">Clients</h3>
+        </div>
+        <div class="col-6">
+            <app-user></app-user>
+            <img style="position: absolute; top: 15px; right: 15rem;" src="assets/svg/search.svg" alt="">
+        </div>
+    </div>
+    <!-- view all -->
+    <div class="outsideShadow w-100 mt-2" style="height: 40em; display: none" id="opening">
+        <div class="col">
+            <h3>Opening</h3>
+            <h3 (click)=" hideView()">
+                View All
+            </h3>
+        </div>
+        <div class="container-fluid">
+            <div class="row" style="height: 90px; overflow: hidden;">
+                <div class="col-3 box-info">
+                    <div style="background-color: #d3d3d3; border-radius: 15px;">
+                        <div class="col" style="border-radius: 20px;">
+                            <img class="avatar" src="assets/images/avatar1.png" alt="">
+                            <div class="content">
+                                <b>Tran Thi Thu</b>
+                                <p>Last visit: 13/02/2020</p>
+                                <p>Up coming visit: 18/02/2020</p>
+                            </div>
+                            <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="container-fluid">
+            <div class="row" style="height: 90px; overflow: hidden;">
+                <div class="col-3 box-info">
+                    <div style="background-color: #d3d3d3; border-radius: 15px;">
+                        <div class="col" style="border-radius: 20px;">
+                            <img class="avatar" src="assets/images/avatar4.png" alt="">
+                            <div class="content">
+                                <b>Tran Thi Thu</b>
+                                <p>Last visit: 13/02/2020</p>
+                                <p>Up coming visit: 18/02/2020</p>
+                            </div>
+                            <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="container-fluid">
+            <div class="row" style="height: 90px; overflow: hidden;">
+                <div class="col-3 box-info">
+                    <div style="background-color: #d3d3d3; border-radius: 15px;">
+                        <div class="col" style="border-radius: 20px;">
+                            <img class="avatar" src="assets/images/avatar4.png" alt="">
+                            <div class="content">
+                                <b>Tran Thi Thu</b>
+                                <p>Last visit: 13/02/2020</p>
+                                <p>Up coming visit: 18/02/2020</p>
+                            </div>
+                            <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="container-fluid">
+            <div class="row" style="height: 90px; overflow: hidden;">
+                <div class="col-3 box-info">
+                    <div style="background-color: #d3d3d3; border-radius: 15px;">
+                        <div class="col" style="border-radius: 20px;">
+                            <img class="avatar" src="assets/images/avatar4.png" alt="">
+                            <div class="content">
+                                <b>Tran Thi Thu</b>
+                                <p>Last visit: 13/02/2020</p>
+                                <p>Up coming visit: 18/02/2020</p>
+                            </div>
+                            <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end view all -->
+    <div id="clients">
+        <div class="outsideShadow w-100 mt-2" style="height: 10em;">
+            <div class="col">
+                <h3>Opening</h3>
+                <h3 (click)=" openViewOpening()">
+                    View All
+                </h3>
+            </div>
+            <div class="container-fluid">
+                <div class="row" style="height: 90px; overflow: hidden;">
+                    <div class="col-3 box-info" *ngFor="let patient of patients">
+                        <div style="background-color: #d3d3d3; border-radius: 15px;" routerLink="/pages/profile/detail/{{patient.PatientId}}/profile-info">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #d3d3d3;" src="assets/images/avatar3.png" alt="">
+                                <div class="content">
+                                    <b>{{patient.LastName}} {{patient.FirstName}}</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+       
+        <div class="outsideShadow w-100" style="height: 10em; margin-top: 1em;">
+            <div class="col">
+                <h3>Schedule</h3>
+                <h3>
+                    View All
+                </h3>
+            </div>
+            <div class="container-fluid">
+                <div class="row" style="height: 90px; overflow: hidden;">
+                    <div class="col-3 box-info">
+                        <div style="background-color: #F0E5D1; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #F0E5D1;" src="assets/images/avatar1.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 box-info">
+                        <div style="background-color: #F0E5D1; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #F0E5D1;" src="assets/images/avatar2.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 box-info">
+                        <div style="background-color: #F0E5D1; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #F0E5D1;" src="assets/images/avatar3.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 box-info">
+                        <div style="background-color: #F0E5D1; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #F0E5D1;" src="assets/images/avatar4.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="outsideShadow w-100" style="height: 10em; margin-top: 1em;">
+            <div class="col">
+                <h3>Last Results</h3>
+                <h3>
+                    View All
+                </h3>
+            </div>
+            <div class="container-fluid">
+                <div class="row" style="height: 90px; overflow: hidden;">
+                    <div class="col-3 box-info">
+                        <div style="background-color: #e5efe5; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #e5efe5;" style="border: 2px solid #e5efe5;" src="assets/images/avatar1.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 box-info">
+                        <div style="background-color: #e5efe5; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #e5efe5;" src="assets/images/avatar2.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 box-info">
+                        <div style="background-color: #e5efe5; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #e5efe5;" src="assets/images/avatar3.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 box-info">
+                        <div style="background-color: #e5efe5; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #e5efe5;" src="assets/images/avatar4.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="outsideShadow w-100" style="height: 10em; margin-top: 1em;">
+            <div class="col">
+                <h3>Request for review</h3>
+                <h3>
+                    View All
+                </h3>
+            </div>
+            <div class="container-fluid">
+                <div class="row" style="height: 90px; overflow: hidden;">
+
+                    <div class="col-3 box-info">
+                        <div style="background-color:#dcefef; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #dcefef;" src="assets/images/avatar1.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 box-info">
+                        <div style="background-color:#dcefef; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #dcefef;" src="assets/images/avatar2.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 box-info">
+                        <div style="background-color:#dcefef; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #dcefef;" src="assets/images/avatar3.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 box-info">
+                        <div style="background-color:#dcefef; border-radius: 15px;">
+                            <div class="col" style="border-radius: 20px;">
+                                <img class="avatar" style="border: 2px solid #dcefef;" src="assets/images/avatar4.png" alt="">
+                                <div class="content">
+                                    <b>Tran Thi Thu</b>
+                                    <p>Last visit: 13/02/2020</p>
+                                    <p>Up coming visit: 18/02/2020</p>
+                                </div>
+                                <img class="chat" src="../../../../assets/svg/chat.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+    <button class="add-button" routerLink="registration">
+        <img src="assets/svg/create.svg" alt="">
+    </button>
+</div>

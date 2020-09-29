@@ -1,0 +1,106 @@
+<!-- <div class="container-fluid">
+    <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 table-hover text-center tableStyle">
+        <ng-container matColumnDef="check">
+            <th mat-header-cell *matHeaderCellDef>
+                <input  id="checkbox" type="checkbox">
+                <label for="checkbox"></label>
+            </th>
+            <td mat-cell *matCellDef="let e">
+                <input id="check" type="checkbox">
+                <label for="check"></label>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Date">
+            <th mat-header-cell *matHeaderCellDef>
+                Date
+            </th>
+            <td mat-cell *matCellDef="let e">
+                <input type="text" value="{{e.date}}" [readonly]="isReadonly">
+            </td>
+            <td mat-cell style="height: 10px; background-color: aqua;">
+                
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Problem">
+            <th mat-header-cell *matHeaderCellDef>
+                Problem
+            </th>
+            <td mat-cell *matCellDef="let e">
+                <input type="text" value="{{e.problem}}" [readonly]="isReadonly">
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Review">
+            <th mat-header-cell *matHeaderCellDef>
+                Review
+            </th>
+            <td mat-cell *matCellDef="let e">
+                <mat-icon>file_copy</mat-icon>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div class="icon-div">
+        <button class="btn" (click)="editDataTable()">
+           <img src="assets/svg/print.svg" alt="">
+        </button>
+        
+    </div>
+</div> 
+
+
+ -->
+
+ 
+<div class="container-fluid">
+    <form novalidate #myForm="ngForm">
+      <div class="kendoTableStyle">
+        <kendo-grid class="table-hover table-borderless " [data]="Listofvisits" (edit)="editHandler($event)"   (add)="addHandler($event, myForm)"
+        (remove)="removeHandler($event)"  (save)="saveHandler($event)" (cancel)="cancelHandler($event)">
+        <ng-template kendoGridToolbarTemplate>
+          <button kendoGridAddCommand class="btn"><mat-icon>add_circle_outline</mat-icon></button>
+        </ng-template>
+        <kendo-grid-column field="StartDate" title="Date">
+          <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+            <span>{{dataItem.StartDate | date : 'yyyy-MM-dd'}}</span>
+          </ng-template>
+          <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+            <input type="date" [(ngModel)]="dataItem.StartDate" name="StartDate" required />
+          </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="Problem" title="Problem">
+          <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+            <input type="text" [(ngModel)]="dataItem.Problem" name="Problem" required />
+          </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="Review" title="View" width="100">
+          <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+            <mat-icon>file_copy</mat-icon>
+          </ng-template>
+            <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+              <mat-icon>file_copy</mat-icon>
+            </ng-template>
+          </kendo-grid-column>
+        <kendo-grid-command-column title="command" width="130">
+          <ng-template kendoGridCellTemplate let-isNew="isNew">
+            <!-- edit the command directive, will be visible when not in edit mode -->
+            <button kendoGridEditCommand class="btn"><mat-icon>done</mat-icon></button>
+            <!-- remove the command directive, will be visible when not in edit mode -->
+            <button kendoGridRemoveCommand class="btn"><mat-icon>delete</mat-icon></button>
+            <!-- save the command directive, will be visible when in edit mode -->
+            <button kendoGridSaveCommand class="btn"><mat-icon>{{ isNew ? 'create' : 'done' }}</mat-icon></button>
+            <!-- cancel the command directive, will be visible when in edit mode -->
+            <button kendoGridCancelCommand class="btn"><mat-icon>{{ isNew ? 'cancel' : 'cancel' }}</mat-icon></button>
+          </ng-template>
+        </kendo-grid-command-column>
+        <button class="btn btn-primary material-icons" kendoGridAddCommand>
+          add_circle_outline
+      </button>
+      </kendo-grid>
+      </div>
+      
+    </form>   
+  </div>
+  
+  

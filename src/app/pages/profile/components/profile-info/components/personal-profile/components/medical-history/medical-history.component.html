@@ -1,0 +1,130 @@
+<div class="container-fluid">
+  <div class="row justify-content-between" style="height: 70vh;">
+    <div class="col-6 medical">
+      <form novalidate #myForm="ngForm" class="table-body">
+        <div class="kendoTableStyle">
+          <kendo-grid class="table-hover" [data]="dataSource" (edit)="editHandler($event)"
+            (add)="addHandlerMedical($event, myForm)" (remove)="removeHandler($event)" (save)="saveHandler($event)"
+            (cancel)="cancelHandler($event)">
+            <ng-template kendoGridToolbarTemplate>
+              <button kendoGridAddCommand class="btn" id="add-medical" hidden>
+                <mat-icon>add_circle_outline</mat-icon>
+              </button>
+            </ng-template>
+
+            <kendo-grid-column field="SNOMEDCode" title="Medical history">
+              <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                <input type="text" [(ngModel)]="dataItem.SNOMEDCode" name="SNOMEDCode" id="medicalHis" autofocus
+                  required />
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="StartDate" title="Since">
+              <ng-template kendoGridCellTemplate let-dataItem>
+                <input type="date" [value]="dataItem.StartDate | date:'yyyy-MM-dd'" readonly />
+              </ng-template>
+              <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                <input type="date" [(ngModel)]="dataItem.StartDate" name="StartDate" required />
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-command-column *ngIf="!change">
+              <ng-template kendoGridCellTemplate let-isNew="isNew">
+                <!-- edit the command directive, will be visible when not in edit mode -->
+                <button kendoGridEditCommand class="btn" id="edit-medical">
+                  <mat-icon>done</mat-icon>
+                </button>
+                <!-- remove the command directive, will be visible when not in edit mode -->
+                <button kendoGridRemoveCommand class="btn">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <!-- save the command directive, will be visible when in edit mode -->
+                <button kendoGridSaveCommand class="btn">
+                  <mat-icon>{{ isNew ? 'create' : 'done' }}</mat-icon>
+                </button>
+                <!-- cancel the command directive, will be visible when in edit mode -->
+                <button kendoGridCancelCommand class="btn">
+                  <mat-icon>{{ isNew ? 'cancel' : 'cancel' }}</mat-icon>
+                </button>
+              </ng-template>
+            </kendo-grid-command-column>
+            <button class="btn btn-primary material-icons" kendoGridAddCommand>
+              add_circle_outline
+            </button>
+          </kendo-grid>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-6 surgical">
+      <form novalidate #myForm="ngForm">
+        <div class="kendoTableStyle">
+          <kendo-grid class="table-hover" [data]="surgicalDataSource" (edit)="editHandler($event)"
+            (add)="addHandlerSurgical($event, myForm)" (remove)="removeHandler($event)" (save)="saveHandler($event)"
+            (cancel)="cancelHandler($event)">
+            <ng-template kendoGridToolbarTemplate>
+              <button kendoGridAddCommand class="btn" id="add-surgical" hidden>
+                <mat-icon>add_circle_outline</mat-icon>
+              </button>
+            </ng-template>
+            <kendo-grid-column field="SNOMEDCode" title="Surgical history">
+              <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                <input type="text" [(ngModel)]="dataItem.SNOMEDCode" name="SNOMEDCode" required />
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="StartDate" title="Date">
+              <ng-template kendoGridCellTemplate let-dataItem>
+                <input type="date" [value]="dataItem.StartDate | date:'yyyy-MM-dd'" readonly />
+              </ng-template>
+              <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                <input type="date" [(ngModel)]="dataItem.StartDate" name="StartDate" required />
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-command-column *ngIf="!change">
+              <ng-template kendoGridCellTemplate let-isNew="isNew">
+                <!-- edit the command directive, will be visible when not in edit mode -->
+                <button kendoGridEditCommand class="btn" id="edit-surgical">
+                  <mat-icon>done</mat-icon>
+                </button>
+                <!-- remove the command directive, will be visible when not in edit mode -->
+                <button kendoGridRemoveCommand class="btn">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <!-- save the command directive, will be visible when in edit mode -->
+                <button kendoGridSaveCommand class="btn">
+                  <mat-icon>{{ isNew ? 'create' : 'done' }}</mat-icon>
+                </button>
+                <!-- cancel the command directive, will be visible when in edit mode -->
+                <button kendoGridCancelCommand class="btn">
+                  <mat-icon>{{ isNew ? 'cancel' : 'cancel' }}</mat-icon>
+                </button>
+              </ng-template>
+            </kendo-grid-command-column>
+
+            <!-- <button class="btn btn-primary material-icons" kendoGridAddCommand>
+                  add_circle_outline
+              </button> -->
+          </kendo-grid>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="icon-div">
+    <button mat-button [matMenuTriggerFor]="menu">
+      <span class="material-icons" *ngIf="change">
+        add_circle_outline
+      </span>
+      <span *ngIf="!change">Cancel</span>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="createMedical()">Medical</button>
+      <button mat-menu-item (click)="createSurgical()">Surgical</button>
+    </mat-menu>
+    <span class="material-icons" (click)="editAll()" *ngIf="change">
+      edit
+    </span>
+    <span *ngIf="!change" (click)="saveAll()">
+      Save
+    </span>
+  </div>
+</div>

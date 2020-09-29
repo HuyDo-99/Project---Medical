@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="body-content row">
+        <div class="col-5">
+            <div class="row">
+                <div class="col-6 content" style="padding-right: 0px;">
+                    <div class="first content-first">Heart sound</div>
+                    <div class="first content-first" style="background-color: #DFE7EC;">Murmer</div>
+                    <div class="first content-first">Gallop</div>
+                </div>
+                <div class="col-6 content button-check">
+                    <div class="button-choose first">
+                        <button mat-raised-button>No</button>
+                        <button mat-raised-button>Yes</button>
+                    </div>
+                    <div class="button-choose first">
+                        <button mat-raised-button [style.box-shadow]="!showContent ? 'inset 3px 2px 5px 1px #bdb2bd' : '3px 2px 5px 1px #bdb2bd' " (click)="show()">No</button>
+                        <button mat-raised-button [style.box-shadow]="showContent ? 'inset 3px 2px 5px 1px #bdb2bd' : '3px 2px 5px 1px #bdb2bd' " (click)="show()">Yes</button>
+                    </div>
+                    <div class="button-choose first">
+                        <button mat-raised-button>No</button>
+                        <button mat-raised-button>Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-7" *ngIf="showContent">
+            <div class="row">
+                <div class="col-4 content" style="padding-left: 0px;">
+                    <div class="first content-first" style="background-color: #DFE7EC;">Systolic murmer</div>
+                    <div class="first content-first">Diastolic murmer</div>
+                    <div class="first content-first">Continuous murmer</div>
+                </div>
+                <div class="col-2 content" style="padding-left: 0px; padding-right: 0px;">
+                    <div class="first content-first" style="background-color: #DFE7EC;">Grade: 5/6</div>
+                </div>
+                <div class="col-6 heart">
+                    <div class="first second content-first">Heart sound Angular Live Development Server is listening</div>
+                    <div class="first second content-first">Murmer Angular Live Development Server is listening</div>
+                    <div class="first second content-first" style="background-color: #DFE7EC;">Gallop Angular Live Development Server is listening</div>
+                    <div class="first second content-first">Murmer Angular Live Development Server is listening</div>
+                    <div class="first second content-first">Gallop Angular Live Development Server is listening</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

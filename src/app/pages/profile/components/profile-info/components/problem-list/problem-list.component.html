@@ -1,0 +1,85 @@
+<app-tab-row-menu></app-tab-row-menu>
+<div class="container-fluid mt-4">
+  <div class="problem__list__header">
+    <div class="personal__info outsideShadow ml-1">
+      <img *ngIf="patientInfo !== undefined" src="{{patientInfo.MediaURL}}" alt="" />
+      <div class="info__content">
+        <div *ngIf="patientInfo !== undefined">
+          <h5>Name :</h5>
+          <h4>{{patientInfo.FirstName}} {{patientInfo.LastName}}</h4>
+        </div>
+        <div *ngIf="patientInfo !== undefined">
+          <h5>Age :</h5>
+          <h4>{{patientInfo.Age}}</h4>
+        </div>
+        <div *ngIf="patientInfo !== undefined">
+          <h5>Phone :</h5>
+          <h4>{{patientInfo.Phone}}</h4>
+        </div>
+        <div *ngIf="patientInfo !== undefined">
+          <h5>Email :</h5>
+          <h4>{{patientInfo.Email}}</h4>
+        </div>
+        <div *ngIf="patientInfo !== undefined">
+          <h5>Address :</h5>
+          <h4>{{patientInfo.Address}}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="personal__note insideShadow mr-1">
+      <h3>Note</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, mollitia?
+      </p>
+    </div>
+  </div>
+  <div class="problem__list__body insideShadow ml-1 mr-1 ">
+    <div class="old__problem">
+      <h3 style="color: #707070;">Old problem</h3>
+      <div class="problem__group" *ngFor="let problem of problemList">
+        <div class="title-problem">
+           <h4>
+             {{problem.Name}}
+           </h4>
+        </div>
+        <div class="button__group">
+          <input type="checkbox" id="{{problem.ProblemId}}-1" name="problem"
+          [checked]="problem.Status == 1">
+          <label class="" for="{{problem.ProblemId}}-1" (click)="updateProblemPatient(1, problem.PatientProblemId)"><p>Solved</p></label>
+          <input type="checkbox" id="{{problem.ProblemId}}-2" name="problem"
+          [checked]="problem.Status == 2" >
+          <label class="" for="{{problem.ProblemId}}-2" (click)="updateProblemPatient(2, problem.PatientProblemId)"><p>Follow up</p></label>
+          <input type="checkbox" id="{{problem.ProblemId}}-3" name="problem"
+          [checked]="problem.Status == 3" >
+          <label class="" for="{{problem.ProblemId}}-3" (click)="updateProblemPatient(3, problem.PatientProblemId)"><p>Skip</p></label>
+          
+          <!-- <input type="checkbox" id="{{problem.ProblemId}}-1">
+          <label class="" for="{{problem.ProblemId}}-1"><p>Solved</p></label>
+          <input type="checkbox" id="{{problem.ProblemId}}-2">
+          <label class="" for="{{problem.ProblemId}}-2"><p>Follow up</p></label>
+          <input type="checkbox" id="{{problem.ProblemId}}-3">
+          <label  class="" for="{{problem.ProblemId}}-3"><p>Skip</p></label> -->
+        </div>
+      </div>
+     
+    </div>
+    <div style="border-right: thin solid; height: 26em; width: 1px;"></div>
+    <div class="new__problem">
+      <h3 style="color: #707070;">New problem</h3>
+      <div class="content" >
+         <select name="problemList" id="problem" [(ngModel)]="problemId">
+           <option *ngFor="let i of allProblemList" value="{{i.ProblemId}}">
+             {{i.Name}}
+           </option>
+         </select>
+      </div>      
+      <button class="btn add-button" (click)="createProblem()">
+        <img src="assets/svg/create.svg" alt="">
+    </button>
+    </div>
+  </div>
+  <div class="btn__start">
+    <button class=" insideShadow" (click)= "sentMessage()">Start</button>
+  </div>
+ 
+</div>
